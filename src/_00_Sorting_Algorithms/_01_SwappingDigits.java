@@ -38,13 +38,34 @@ class _01_SwappingDigits {
 	// Iterate through the array and when you find two elements that are out
 	// of order, swap them. Repeat this until the array is in order.
 	public static void sortIntArray(int[] arr) {
-
+		boolean isSorted = false;
+		while (isSorted == false) {
+			isSorted = true;
+			for (int i = 0; i + 1 < arr.length; i++) {
+				if (arr[i] > arr[i + 1]) {
+					int first = arr[i];
+					int second = arr[i + 1];
+					arr[i] = second;
+					arr[i + 1] = first;
+					isSorted = false;
+				}
+			}
+		}
 	}
 
 	// 3. Complete the method so that it finds the middle number in the array.
 	// *Hint* it helps to sort it first.
-	// *Double Hint* Use the method you already wrote in step 2 to sort it
+	// *Double Hint* Use the method you already wrote
 	public static int findMiddle(int[] arr) {
-		return 0;
+		for (int i = 0; i + 1 < arr.length; i++) {
+			if (arr[i] < arr[i + 1]) {
+				int first = arr[i];
+				int second = arr[i + 1];
+				arr[i] = second;
+				arr[i + 1] = first;
+			}
+		}
+		return arr[arr.length / 2];
+
 	}
 }
