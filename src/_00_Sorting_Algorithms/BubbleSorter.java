@@ -12,9 +12,9 @@ public class BubbleSorter extends Sorter {
 	void sort(int[] array, SortingVisualizer display) {
 		boolean isSorted = false;
 		while (isSorted == false) {
+			display.updateDisplay();
 			isSorted = true;
 			for (int i = 0; i + 1 < array.length; i++) {
-				display.updateDisplay();
 				if (array[i] > array[i + 1]) {
 					int first = array[i];
 					int second = array[i + 1];
