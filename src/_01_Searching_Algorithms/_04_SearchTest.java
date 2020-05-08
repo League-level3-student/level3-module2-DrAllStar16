@@ -8,9 +8,18 @@ class _04_SearchTest {
 
 	// A MINIMUM OF 3 TESTS ARE REQUIRED FOR EACH METHOD
 	
+	
 	@Test
 	public void testLinearSearch() {
 		//1. use the assertEquals method to test your linear search method.
+		String[] words = new String[3];
+		_04_SearchTest st = new _04_SearchTest();
+		words[0] = "a";
+		words[1] = "b";
+		words[2] = "c";
+		
+		
+		
 	}
 
 	@Test
