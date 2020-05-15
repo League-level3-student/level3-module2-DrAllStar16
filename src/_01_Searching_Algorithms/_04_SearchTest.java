@@ -13,19 +13,32 @@ class _04_SearchTest {
 	public void testLinearSearch() {
 		//1. use the assertEquals method to test your linear search method.
 		String[] words = new String[3];
-		_04_SearchTest st = new _04_SearchTest();
+		_00_LinearSearch ls = new _00_LinearSearch();
 		words[0] = "a";
 		words[1] = "b";
 		words[2] = "c";
-		
-		
-		
+	
+		assertEquals(0, ls.linearSearch(words, "a"));
+		assertEquals(1, ls.linearSearch(words, "b"));
+		assertEquals(2, ls.linearSearch(words, "c"));
+		assertEquals(-1, ls.linearSearch(words, "d"));
 	}
 
 	@Test
 	public void testBinarySearch() {
 		//2. use the assertEquals method to test your binary search method.
 		//   remember that the array must be sorted
+		int[] array = new int[10];
+		_01_BinarySearch bs = new _01_BinarySearch();
+		array[0] = 1;
+		array[1] = 2;
+		array[2] = 3;
+	
+		
+		assertEquals(0, bs.binarySearch(array, 0, 2, 1));
+		assertEquals(1, bs.binarySearch(array, 0, 2, 2));
+		assertEquals(2, bs.binarySearch(array, 0, 2, 3));
+		assertEquals(-1, bs.binarySearch(array, 0, 2, 4));
 	}
 	
 	@Test
