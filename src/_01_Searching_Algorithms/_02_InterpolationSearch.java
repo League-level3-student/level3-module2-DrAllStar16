@@ -10,8 +10,7 @@ public class _02_InterpolationSearch {
 	
 	//1. Complete the steps in the interpolationSearch method
 	//   We can assume array is already sorted and uniformly distributed
-	public static int interpolationSearch(int[] array, int value)
-    {
+	public static int interpolationSearch(int[] array, int value){
         //2. create two integers called start and end.
 		//   initialize them to 0 and the length of the array minus one
 		//   respectively
@@ -34,21 +33,30 @@ public class _02_InterpolationSearch {
 		}
 		}
     	  
-      }
+      
 		//5. create an integer called position
         	//  initialize it to the following:
         	//  start + (((end - start) * (value - array[start])) / (array[end] - array[start]));
         	//  This calculates the center of the array keeping the even distribution in mind.
-      
+      int position = start + (((end - start) * (value - array[start])) / (array[end] - array[start]));
             //6. if the array element at position is equal to the value,
-            //   then we found it and can return position.
+            //   then we found it and can return position.\
       
+      if (array[position] == value) {
+    	  return position;
+	}
             //7. if the array element at position is less than value,
             //   then set start equal to position plus one
-            
+            if (array[position]<value) {
+				start = position + 1;
+			}
             //8. otherwise, set end equal to position minus one
-          
+            else {
+				end = position - 1;
+			}
+      }
         //9. Return -1 because the value was not found
-        return 0;
-    }
+        return -1;
+    
+}
 }

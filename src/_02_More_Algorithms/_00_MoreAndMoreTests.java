@@ -57,6 +57,13 @@ public class _00_MoreAndMoreTests {
 //
 //	  }
 
+	
+	public String multiply (int first, int second) {
+		
+		
+		return "1";
+	}
+		
 
 
 }
