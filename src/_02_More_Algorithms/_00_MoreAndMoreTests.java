@@ -2,6 +2,7 @@ package _02_More_Algorithms;
 
 import static org.junit.Assert.*;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -66,9 +67,13 @@ public class _00_MoreAndMoreTests {
 		return answer;
 	}
 	
-	public int isPrime (int prime) {
+	public boolean isPrime (int number) {
+		if ((number/1 == number)&&(number/number == 1)&&(number/2 % 1 == 0)) {
+			return true;
+		}else {
+			return false;	
+		}
 		
-		return 1;
 	}
 		
 
