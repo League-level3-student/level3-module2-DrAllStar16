@@ -7,75 +7,90 @@ import org.junit.Test;
 
 /**
  * Uncomment each test and then write the method to make it pass.
- * **/
+ **/
 
 public class _00_MoreAndMoreTests {
+// hi
+	@Test
+	public void MultTest() {
+
+		assertEquals("10 x 0 = 0", multiply(10, 0));
+		assertEquals("10 x 10 = 100", multiply(10, 10));
+		assertEquals("8 x 11 = 88", multiply(8, 11));
+	}
 
 	@Test
-	  public void MultTest() {
+	public void PrimeTest() {
 
-	    assertEquals("10 x 0 = 0", multiply(10, 0));
-	    assertEquals("10 x 10 = 100", multiply(10, 10));
-	    assertEquals("8 x 11 = 88", multiply(8, 11));
+		assertTrue(isPrime(3));
+		assertTrue(isPrime(5));
+		assertTrue(isPrime(541));
+		assertFalse(isPrime(4));
+		assertFalse(isPrime(12));
+		assertFalse(isPrime(527));
+
+	}
+
+	@Test
+	  public void SquareTest() {
+
+	    assertTrue(isSquare(4));
+	    assertTrue(isSquare(144));
+	    assertTrue(isSquare(64));
+	    assertTrue(isSquare(10201));
+	    assertTrue(isSquare(1));
+	    assertFalse(isSquare(3));
+	    assertFalse(isSquare(22));
+	    assertFalse(isSquare(143));
+
 	  }
 
 	@Test
-	  public void PrimeTest() {
+	  public void CubeTest() {
 
-	    assertTrue(isPrime(3));
-	    assertTrue(isPrime(5));
-	    assertTrue(isPrime(541));
-	    assertFalse(isPrime(4));
-	    assertFalse(isPrime(12));
-	    assertFalse(isPrime(527));
+	    assertTrue(isCube(27));
+	    assertTrue(isCube(216));
+	    assertTrue(isCube(729));
+	    assertTrue(isCube(1));
+	    assertFalse(isCube(3));
+	    assertFalse(isCube(143));
 
 	  }
-//
-//	@Test
-//	  public void SquareTest() {
-//
-//	    assertTrue(isSquare(4));
-//	    assertTrue(isSquare(144));
-//	    assertTrue(isSquare(64));
-//	    assertTrue(isSquare(10201));
-//	    assertTrue(isSquare(1));
-//	    assertFalse(isSquare(3));
-//	    assertFalse(isSquare(22));
-//	    assertFalse(isSquare(143));
-//
-//	  }
-//
-//	@Test
-//	  public void CubeTest() {
-//
-//	    assertTrue(isCube(27));
-//	    assertTrue(isCube(216));
-//	    assertTrue(isCube(729));
-//	    assertTrue(isCube(1));
-//	    assertFalse(isCube(3));
-//	    assertFalse(isCube(22));
-//	    assertFalse(isCube(143));
-//
-//	  }
 
-	
-	public String multiply (int first, int second) {
+	public String multiply(int first, int second) {
 		String answer;
 		int fts = (first * second);
-		answer = first+ " x " + second + " = "+ fts;
-		
+		answer = first + " x " + second + " = " + fts;
+
 		return answer;
 	}
-	
+
 	public boolean isPrime (int number) {
-		if ((number/1 == number)&&(number/number == 1)&&(number/2 % 1 == 0)) {
-			return true;
-		}else {
-			return false;	
-		}
-		
+		for(int i = 2; i <= number/2; ++i) {
+			if(number % i == 0) {
+				return false;
+			}
+		} 
+		return true;	
 	}
-		
-
-
+	
+	public boolean isSquare (int number) {
+		double sr = Math.sqrt(number);
+		if (sr % 1 != 0) {
+			return false;
+		}
+		else {
+			return true;
+		}
+	}
+	
+	public boolean isCube (int number) {
+		double cr = Math.cbrt(number);
+		if (cr % 1 != 0) {
+			return false;
+		}
+		else {
+			return true;
+		}
+	}
 }
