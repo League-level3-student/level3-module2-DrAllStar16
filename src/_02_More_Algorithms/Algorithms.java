@@ -1,30 +1,31 @@
 package _02_More_Algorithms;
 
+import java.util.Comparator;
 import java.util.List;
 
 public class Algorithms {
-	
+
 	public static int findBrokenEgg(List<String> eggs) {
 		for (int i = 0; i < eggs.size(); i++) {
 			if (eggs.get(i) == "cracked") {
 				return i;
-				
+
 			}
-			
+
 		}
-			return 0;
-		}
-	
+		return 0;
+	}
+
 	public static int countPearls(List<Boolean> oysters) {
 		int p = 0;
 		for (int j = 0; j < oysters.size(); j++) {
-		if (oysters.get(j) == true) {
-			p ++;
-		} 
-	}
+			if (oysters.get(j) == true) {
+				p++;
+			}
+		}
 		return p;
 	}
-	
+
 	public static Double findTallest(List<Double> peeps) {
 		double t = 0;
 		for (int i = 0; i < peeps.size(); i++) {
@@ -33,9 +34,9 @@ public class Algorithms {
 			}
 		}
 		return t;
-		
+
 	}
-	
+
 	public static String findLongestWord(List<String> words) {
 		String l = "";
 		for (int i = 0; i < words.size(); i++) {
@@ -45,24 +46,32 @@ public class Algorithms {
 		}
 		return l;
 	}
-	
-	public static Boolean containsSOS(List<String> message1, List<String> message2) {
+
+	public static Boolean containsSOS(List<String> message1) {
 		if (message1.contains(" ... --- ... ")) {
 			return true;
 		}
-		
-		if (message2.contains(" ... --- ... ")) {
-			return true;
-		}
-		
+
 		else {
 			return false;
 		}
 
-		
 	}
-	
+
+	public static List<Double> sortScores(List<Double> results) {
+		results.sort(Comparator.naturalOrder());
+
+		return results;
+	}
+
+	public static List<String> sortDNA(List<String> unsortedSequences) {
+		for (int i = 0; i < unsortedSequences.size(); i++) {
+
+			if (unsortedSequences.get(i).length() < unsortedSequences.get(i + 1).length()) {
+				unsortedSequences.get(0) = unsortedSequences.get(i);
+				unsortedSequences.get(i) = unsortedSequences.get(0);
+			}
+		}
+		return unsortedSequences;
+	}
 }
-
-
-
