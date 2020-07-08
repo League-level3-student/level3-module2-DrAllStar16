@@ -65,12 +65,23 @@ public class Algorithms {
 	}
 
 	public static List<String> sortDNA(List<String> unsortedSequences) {
-		for (int i = 0; i < unsortedSequences.size(); i++) {
-
-			if (unsortedSequences.get(i).length() < unsortedSequences.get(i + 1).length()) {
-				unsortedSequences.get(0) = unsortedSequences.get(i);
-				unsortedSequences.get(i) = unsortedSequences.get(0);
-			}
+		while(unsortedSequences.get(0).length() > unsortedSequences.get(3).length()) {
+		if (unsortedSequences.get(0).length() > unsortedSequences.get(1).length()) {
+			unsortedSequences.set(0, unsortedSequences.get(1));
+			unsortedSequences.set(1, unsortedSequences.get(0));
+		}
+		if (unsortedSequences.get(1).length() > unsortedSequences.get(2).length()) {
+			unsortedSequences.set(1, unsortedSequences.get(2));
+			unsortedSequences.set(2, unsortedSequences.get(1));
+		}
+		if (unsortedSequences.get(2).length() > unsortedSequences.get(3).length()) {
+			unsortedSequences.set(2, unsortedSequences.get(3));
+			unsortedSequences.set(3, unsortedSequences.get(4));
+		}
+		if (unsortedSequences.get(3).length() > unsortedSequences.get(4).length()) {
+			unsortedSequences.set(3, unsortedSequences.get(4));
+			unsortedSequences.set(4, unsortedSequences.get(3));
+		} 
 		}
 		return unsortedSequences;
 	}
